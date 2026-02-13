@@ -4,7 +4,7 @@ let currentIndex = 0;
 let isShuffle = false;
 let isRepeat = false;
 
-// English songs with original names (Safe links)
+// Online songs
 const onlineSongs = [
     { title: "SoundHelix Song 1", artist: "Helix Artist", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3", cover: "https://picsum.photos/300/300?random=1" },
     { title: "SoundHelix Song 2", artist: "Helix Artist", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3", cover: "https://picsum.photos/300/300?random=2" },
@@ -15,6 +15,14 @@ window.onload = () => {
     loadOnlineSongs();
     setupControls();
     setupKeyboard();
+
+    // Toggle Sidebar Logic
+    const menuBtn = document.getElementById('menuBtn');
+    const sidebar = document.getElementById('sidebar');
+    
+    menuBtn.onclick = () => {
+        sidebar.classList.toggle('hidden');
+    };
 };
 
 function loadOnlineSongs() {
